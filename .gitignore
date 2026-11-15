@@ -1,0 +1,24 @@
+# Build output and packaging
+target/
+dist/
+*.app
+*.exe
+*.zip
+*.tgz
+*.b64.txt
+# The author's private working files: never part of the repository
+_private_backup/
+milestones/
+docs/raw/
+PUBLISH_TODO.md
+TODO.md
+_pj_copy.json
+*.bak
+*.orig
+.DS_Store
+# Dash projects, exports and scans stay on the owner's computer
+*.bwd
+*.dashfw
+*.stl
+exports/
+CLAUDE.md

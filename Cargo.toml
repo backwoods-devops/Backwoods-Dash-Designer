@@ -1,0 +1,21 @@
+[package]
+name = "bw-dash-designer"
+version = "0.3.0"
+edition = "2021"
+authors = ["Chris & Stacy Weston, Backwoods Fabrications"]
+description = "Backwoods Dash Designer: design 3D-printable dashes, panels and trim"
+license = "Apache-2.0"
+readme = "README.md"
+
+[dependencies]
+eframe = { version = "0.37", default-features = false, features = ["glow", "default_fonts", "x11"] }
+
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+boolmesh = "0.2.2"
+miniz_oxide = "0.8"
+
+[profile.release]
+opt-level = 3
+
+[build-dependencies]
+winresource = "0.1"

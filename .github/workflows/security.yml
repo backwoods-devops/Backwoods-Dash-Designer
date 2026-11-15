@@ -1,0 +1,22 @@
+name: Security audit
+# Checks the Rust libraries in Cargo.lock against the RustSec advisory database: when a library changes
+# (pull requests and pushes that touch Cargo.lock) and once a week, so a newly published problem is noticed.
+on:
+  pull_request:
+    paths: ["Cargo.lock", "Cargo.toml"]
+  push:
+    branches: [main]
+    paths: ["Cargo.lock", "Cargo.toml"]
+  schedule:
+    - cron: "17 9 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: cargo audit
+        run: cargo install cargo-audit --locked && cargo audit

@@ -1,0 +1,11 @@
+# Opens pull requests when a Rust library or a GitHub Action has a new version, so updates (and security fixes) are not missed.
+version: 2
+updates:
+  - package-ecosystem: "cargo"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
