@@ -62,7 +62,7 @@ jobs:
           mkdir -p pkg
           cp target/${{ matrix.target }}/release/bw-dash-designer LICENSE NOTICE README.md pkg/
           tar -czf "${{ matrix.asset }}" -C pkg .
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.asset }}
           path: ${{ matrix.asset }}
