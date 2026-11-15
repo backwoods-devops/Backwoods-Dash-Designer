@@ -1,6 +1,6 @@
 #!/bin/bash
 # Builds the Windows program (a single .exe) on a Mac. Nothing needs to run on Windows to make it.
-# One time: Homebrew + Rust must be installed (you already have Rust). The script installs the rest.
+# Requirements: Homebrew and Rust must be installed. The script installs everything else it needs.
 set -e
 cd "$(dirname "$0")"
 TARGET=x86_64-pc-windows-gnu
