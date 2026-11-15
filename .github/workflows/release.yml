@@ -44,7 +44,7 @@ jobs:
         run: |
           New-Item -ItemType Directory -Force dist | Out-Null
           Copy-Item "target/${{ matrix.target }}/release/bw-dash-designer.exe" "dist/Backwoods Dash Designer.exe"
-          Copy-Item LICENSE, NOTICE, README.md dist/
+          Copy-Item LICENSE, NOTICE, THIRD_PARTY.md, README.md dist/
           Compress-Archive -Path dist/* -DestinationPath "${{ matrix.asset }}"
       - name: Package (Mac)
         if: runner.os == 'macOS'
@@ -54,13 +54,13 @@ jobs:
           cp assets/DashDesigner.icns "$APP/Contents/Resources/DashDesigner.icns"
           cp "target/${{ matrix.target }}/release/bw-dash-designer" "$APP/Contents/MacOS/bw-dash-designer"
           sed -n "/<<'P'/,/^P\$/p" make_app.sh | sed '1d;$d' > "$APP/Contents/Info.plist"
-          cp LICENSE NOTICE "$APP/Contents/Resources/"
+          cp LICENSE NOTICE THIRD_PARTY.md "$APP/Contents/Resources/"
           ditto -c -k --keepParent "$APP" "${{ matrix.asset }}"
       - name: Package (Linux)
         if: runner.os == 'Linux'
         run: |
           mkdir -p pkg
-          cp target/${{ matrix.target }}/release/bw-dash-designer LICENSE NOTICE README.md pkg/
+          cp target/${{ matrix.target }}/release/bw-dash-designer LICENSE NOTICE THIRD_PARTY.md README.md pkg/
           tar -czf "${{ matrix.asset }}" -C pkg .
       - uses: actions/upload-artifact@v4
         with:

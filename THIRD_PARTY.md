@@ -1,19 +1,36 @@
-# Third-party software
+# Third-Party Software and Licenses
 
-Backwoods Dash Designer is built with the open-source Rust crates below (versions from `Cargo.lock`). Each is used under
-its own license; nearly all are "MIT OR Apache-2.0". Their full license texts come with the crates (`cargo vendor`, or
-https://crates.io/crates/<name>).
+Backwoods Dash Designer is licensed under the Apache License, Version 2.0 (see `LICENSE` and `NOTICE`). It incorporates
+the third-party components listed in this file. Each component remains under its own license terms, which are not
+changed by the license of this program. Versions are those recorded in `Cargo.lock`. The full license text of each Rust
+crate is included in its published source package at `https://crates.io/crates/<crate name>`.
 
-## Worth knowing
+## Components with specific notices
 
-- **boolmesh** (MPL-2.0): the 3D boolean engine used for cut-outs and compound shapes. MPL-2.0 is a file-level license: it
-  is fine to use from an Apache-2.0 program, but its own source files stay under MPL-2.0 and keep their notices. This
-  repository does not copy any of its files.
-- **Fonts**: egui's built-in fonts (`epaint_default_fonts`) are used for all program text: Ubuntu-Light (Ubuntu Font
-  License 1.0), Hack (MIT), and Noto Emoji and an emoji icon font (SIL Open Font License 1.1).
-- **self_cell** is dual-licensed Apache-2.0 OR GPL-2.0-only and **r-efi** MIT OR Apache-2.0 OR LGPL-2.1-or-later: in
-  both cases the Apache-2.0 / MIT option is the one used here.
-- Build-only: `winresource` (MIT) embeds the Windows icon.
+### boolmesh (MPL-2.0)
+
+boolmesh provides the 3D boolean operations used for cut-outs and compound shapes. It is used as an unmodified library
+dependency and is licensed under the Mozilla Public License, Version 2.0 (https://www.mozilla.org/MPL/2.0/). Its source
+code is available at https://crates.io/crates/boolmesh. No boolmesh source files are copied into or modified in this
+repository.
+
+### Fonts
+
+Program text is set in the fonts bundled with egui (the `epaint_default_fonts` crate), which are embedded in the
+executable:
+
+- Ubuntu-Light: Ubuntu Font License, Version 1.0 (https://ubuntu.com/legal/font-licence)
+- Hack: MIT License
+- Noto Emoji and an emoji icon font: SIL Open Font License, Version 1.1 (https://openfontlicense.org)
+
+### Multi-licensed crates
+
+- `self_cell` is offered under Apache-2.0 OR GPL-2.0-only. It is used under the Apache-2.0 license.
+- `r-efi` is offered under MIT OR Apache-2.0 OR LGPL-2.1-or-later. It is used under the MIT or Apache-2.0 license.
+
+### Build-time dependencies
+
+- `winresource` (MIT) embeds the application icon in the Windows executable. It is not part of the running program.
 
 ## All crates
 
