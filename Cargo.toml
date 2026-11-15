@@ -1,6 +1,6 @@
 [package]
 name = "bw-dash-designer"
-version = "0.3.0"
+version = "0.3.3"
 edition = "2021"
 authors = ["Chris & Stacy Weston, Backwoods Fabrications"]
 description = "Backwoods Dash Designer: design 3D-printable dashes, panels and trim"

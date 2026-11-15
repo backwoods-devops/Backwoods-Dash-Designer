@@ -55,6 +55,9 @@ jobs:
           cp "target/${{ matrix.target }}/release/bw-dash-designer" "$APP/Contents/MacOS/bw-dash-designer"
           sed -n "/<<'P'/,/^P\$/p" make_app.sh | sed '1d;$d' > "$APP/Contents/Info.plist"
           cp LICENSE NOTICE THIRD_PARTY.md "$APP/Contents/Resources/"
+          # Ad-hoc signature (no developer account): without one, Apple Silicon Macs report a downloaded app as "damaged".
+          codesign --force --deep --sign - "$APP"
+          codesign --verify --deep --strict "$APP"
           ditto -c -k --keepParent "$APP" "${{ matrix.asset }}"
       - name: Package (Linux)
         if: runner.os == 'Linux'

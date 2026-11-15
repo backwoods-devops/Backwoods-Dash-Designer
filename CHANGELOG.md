@@ -218,3 +218,4 @@ Wizard step 3, front line across the middle: Straight, Center in / out (the midd
 - New public README with screenshots, GitHub Actions for tests and for Windows, Mac and Linux downloads, and third-party license notes.
 - Exported STL files are named `bwdash_...`. Cleaner build (debug switches removed, unused code warnings fixed).
 - The working folder is now `~/BackwoodsDashDesigner` (an existing `~/DashFW` folder is renamed on first start, nothing is lost). Set `BW_DASH_DIR` to use another folder; the older `DASHFW_DIR` still works.
+- Mac downloads are now ad-hoc signed, so macOS shows the normal "unidentified developer" prompt instead of calling the app "damaged".

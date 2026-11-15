@@ -75,7 +75,7 @@ More highlights:
 | Your computer | Download | First time you open it |
 |---|---|---|
 | **Windows** | `Backwoods-Dash-Designer-windows.zip`. Unzip it and double-click *Backwoods Dash Designer.exe* | Windows may say *"Windows protected your PC"* because the program is not code-signed yet. Click **More info**, then **Run anyway**. |
-| **Mac** (Apple Silicon: M1, M2, M3, M4) | `Backwoods-Dash-Designer-mac-apple-silicon.zip`. Unzip it and drag the app to Applications | macOS may refuse to open it because it is not from the App Store. **Right-click the app, choose Open**, then Open again. You only do this once. |
+| **Mac** (Apple Silicon: M1, M2, M3, M4) | `Backwoods-Dash-Designer-mac-apple-silicon.zip`. Unzip it and drag the app to Applications | macOS may say it is from an unidentified developer. **Right-click the app, choose Open**, then Open again. On newer macOS, if there is no Open button, go to **System Settings > Privacy & Security**, scroll down and click **Open Anyway**. You only do this once. If it says the app is *damaged*, run `xattr -cr "/Applications/Backwoods Dash Designer.app"` in Terminal and open it again. |
 | **Mac** (older Intel Mac) | `Backwoods-Dash-Designer-mac-intel.zip` | Same as above. |
 | **Linux** | `Backwoods-Dash-Designer-linux.tar.gz`. Unpack it and run `./bw-dash-designer` | You need `zenity` installed for the file dialogs. |
 
